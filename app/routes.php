@@ -22,4 +22,5 @@ return function (App $app) {
     // ✅ Auth endpoints
     $app->post('/register', [AuthController::class, 'register']);
     $app->post('/login', [AuthController::class, 'login']);
+    $app->get('/chat/{senderId}/{receiverId}', ChatController::class . ':getMessages');
 };
